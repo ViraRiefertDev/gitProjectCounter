@@ -34,16 +34,28 @@ let counter = 0;
 
 const plusCounterFunction = () => {
   try {
-    counter++;
-    counterResult.textContent = counter;
+    if (counter > 98) {
+      counter = 0;
+      counterResult.textContent = 0;
+      alert("Максимальное значение счетчика 99");
+    } else {
+      counter++;
+      counterResult.textContent = counter;
+    }
   } catch (error) {
     console.log("Произошла ошибка при увеличении счётчика:", error);
   }
 };
 
 const minusCounterFunction = () => {
-  counter--;
-  counterResult.textContent = counter;
+  if (counter < 1) {
+    counter = 0;
+    counterResult.textContent = counter;
+    alert("Минимальное значение счетчика 0");
+  } else {
+    counter--;
+    counterResult.textContent = counter;
+  }
 };
 
 plusButtonCounter.addEventListener("click", plusCounterFunction);
