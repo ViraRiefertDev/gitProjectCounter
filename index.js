@@ -28,6 +28,7 @@
 
 const counterResult = document.querySelector("#counterResult");
 const plusButtonCounter = document.querySelector("#increaseButton");
+const minusButtonCounter = document.querySelector("#decreaseButton");
 
 let counter = 0;
 
@@ -40,4 +41,10 @@ const plusCounterFunction = () => {
   }
 };
 
+const minusCounterFunction = () => {
+  counter--;
+  counterResult.textContent = counter;
+};
+
 plusButtonCounter.addEventListener("click", plusCounterFunction);
+minusButtonCounter.addEventListener("click", minusCounterFunction);
